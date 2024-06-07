@@ -1,3 +1,4 @@
+import os
 from tabulate import tabulate
 
 def get_search(data):
@@ -7,8 +8,6 @@ def get_search(data):
         'DCA, MSC, empenhado, despesa corrente 1': '6.2.2.1.3.01.00 - CREDITO EMPENHADO A LIQUIDAR',
         'DCA, MSC, empenhado, despesa corrente 2': '6.2.2.1.3.02.00 - CREDITO EMPENHADO EM LIQUIDAÇÃO',
         'DCA, MSC, empenhado, despesa corrente 3': '6.2.2.1.3.03.00 - CREDITO EMPENHADO LIQUIDADO A PAGAR',
-
-
     }
 
     data = data.lower()
@@ -22,10 +21,16 @@ def get_search(data):
     else:
         return ['Código não encontrado']
 
+def clear_console():
+    # Limpar o console com base no sistema operacional
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def data_input(user_input):
     data = user_input.strip()
     if data.lower() == 'sair':
         return 'sair', 'Encerrando o chat. Até logo!'
+
+    clear_console()  # Limpar a impressão anterior
 
     codigos = get_search(data)
     table = tabulate({"Resultado": codigos}, headers="keys",
@@ -34,9 +39,4 @@ def data_input(user_input):
 
     return 'continuar', f'Termo da busca => {data}{response}'
 
-# Exemplo de uso
-estado, resposta = data_input("empenhado")
-print(resposta)
 
-estado, resposta = data_input("sair")
-print(resposta)
