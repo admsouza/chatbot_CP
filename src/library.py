@@ -4,10 +4,12 @@ from tabulate import tabulate
 def get_search(data):
     collection = {
         'aldir blank, 17199901': '452430000 - OUTRAS TRANSFERÊNCIAS - INTER OFSS - UNIÃO',
-        'DCA, MSC, Receita 1 ': '621200000 - RECEITA REALIZADA',
-        'DCA, MSC, empenhado, despesa corrente 1': '6.2.2.1.3.01.00 - CREDITO EMPENHADO A LIQUIDAR',
-        'DCA, MSC, empenhado, despesa corrente 2': '6.2.2.1.3.02.00 - CREDITO EMPENHADO EM LIQUIDAÇÃO',
-        'DCA, MSC, empenhado, despesa corrente 3': '6.2.2.1.3.03.00 - CREDITO EMPENHADO LIQUIDADO A PAGAR',
+        'DCA, MSC, Receita 1': '521110000 - PREVISÃO INICIAL DA RECEITA BRUTA',
+        'DCA, MSC, Receita 2': '621200000 -  RECEITA REALIZADA',
+        'DCA, MSC, empenhado, despesa corrente 1': '622130100 - CREDITO EMPENHADO A LIQUIDAR',
+        'DCA, MSC, empenhado, despesa corrente 2': '622130200 - CREDITO EMPENHADO EM LIQUIDAÇÃO',
+        'DCA, MSC, empenhado, despesa corrente 3': '622130300 - CREDITO EMPENHADO LIQUIDADO A PAGAR',
+
     }
 
     data = data.lower()
